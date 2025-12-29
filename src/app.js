@@ -9,7 +9,7 @@ origin:[
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:5175",
-    "https://jsd-react-assessment-solution-front.vercel.app/",
+    "https://jsd-react-assessment-solution-front.vercel.app",
 ],
 };
 
