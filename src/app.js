@@ -2,10 +2,13 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
+
 import { router as apiRoutes } from "./routes/index.js";
 import { limiter } from "./middlewares/rateLimiter.js";
 
 export const app = express();
+
+app.set("trust proxy", 1);
 
 // Global middleware
 app.use(helmet());
@@ -28,6 +31,11 @@ app.use(express.json());
 
 // Middleware to parse cookies (required for cookie-based auth)
 app.use(cookieParser());
+
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl}`);
+  next();
+});
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

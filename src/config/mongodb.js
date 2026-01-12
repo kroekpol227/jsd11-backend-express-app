@@ -5,9 +5,9 @@ export async function connectDB() {
 
   try {
     await mongoose.connect(uri, { dbName: "jsd11-express-app" });
-    console.log("MongoDB connected successfully✅");
+    console.log("MongoDB connected ✅ 🎉");
   } catch (error) {
-    console.error("MongoDB connection error:", error);
+    console.error("MongoDB connection error ❌", error);
     process.exit(1);
   }
 }

@@ -1,3 +1,3 @@
-import {randomBytes} from "crypto";
+import { randomBytes } from "crypto";
 
 console.log(randomBytes(64).toString("hex"));
